@@ -1,21 +1,83 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#09C"
-    android:padding="@dimen/widget_margin">
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/appwidget_text"
-        android:layout_width="wrap_content"
+        android:id="@+id/tz1_textView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_margin="8dp"
-        android:background="#09C"
-        android:contentDescription="@string/appwidget_text"
-        android:text="@string/appwidget_text"
+        android:text="area/city"
+        android:paddingTop="4dp"
         android:textColor="#ffffff"
-        android:textSize="24sp"
-        android:textStyle="bold|italic" />
+        android:textAlignment="center"
+        android:maxLines="1"
+        android:ellipsize="start"
+        android:textAppearance="@android:style/TextAppearance.Small" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/hm1_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HH:mm"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:textAppearance="@android:style/TextAppearance.Medium" />
+
+    <TextView
+        android:id="@+id/mde1_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MM/DD(E)"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textAppearance="@android:style/TextAppearance.Small" />
+
+    <TextView
+        android:id="@+id/tz2_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="area/city"
+        android:paddingTop="4dp"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:maxLines="1"
+        android:ellipsize="start"
+        android:textAppearance="@android:style/TextAppearance.Small" />
+
+    <TextView
+        android:id="@+id/hm2_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HH:mm"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:textAppearance="@android:style/TextAppearance.Medium" />
+
+    <TextView
+        android:id="@+id/mde2_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MM/DD(E)"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textAppearance="@android:style/TextAppearance.Small" />
+
+    <TextView
+        android:id="@+id/battery_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp"
+        android:text="--%"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:maxLines="1"
+        android:ellipsize="start"
+        android:textAppearance="@android:style/TextAppearance.Small" />
+
+</LinearLayout>
