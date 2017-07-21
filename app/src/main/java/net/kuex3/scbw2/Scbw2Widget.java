@@ -2,12 +2,14 @@ package net.kuex3.scbw2;
 
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -56,9 +58,9 @@ public class Scbw2Widget extends AppWidgetProvider {
                 appWidgetManager.updateAppWidget(id, views);
             }
 
-//            Intent serviceIntent = new Intent(context, Scbw2Service.class);
-//            context.stopService(serviceIntent);
-//            context.startService(serviceIntent);
+            IntentFilter filter = new IntentFilter();
+            filter.addAction(Intent.ACTION_BATTERY_CHANGED);
+            context.getApplicationContext().registerReceiver(Scbw2Receiver.getInstance(), filter);
 
             updateClock(context);
         } catch (Exception e) {
@@ -71,12 +73,12 @@ public class Scbw2Widget extends AppWidgetProvider {
         Log.d(TAG, "onReceive:" + intent.getAction());
         super.onReceive(context, intent);
         if (ACTION_UPDATE.equals(intent.getAction())) {
-//            String battery = intent.getStringExtra(Scbw2Receiver.BATTERY);
-//            if (battery != null && battery.length() > 0) {
-//                updateBattery(context, battery);
-//            } else {
+            String battery = intent.getStringExtra(Scbw2Receiver.BATTERY);
+            if (battery != null && battery.length() > 0) {
+                updateBattery(context, battery);
+            } else {
                 updateClock(context);
-//            }
+            }
         }
     }
 
@@ -157,5 +159,3 @@ public class Scbw2Widget extends AppWidgetProvider {
         }
     }
 }
-
-
